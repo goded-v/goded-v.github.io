@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="goded-v Blog">
 <meta property="og:description" content="最简单的Vue数据双向绑定（响应式系统）的实现原理">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2021-01-19T05:43:51.422Z">
+<meta property="og:updated_time" content="2021-01-19T05:52:33.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最简单的Vue数据双向绑定（响应式系统）的实现原理">
 <meta name="twitter:description" content="最简单的Vue数据双向绑定（响应式系统）的实现原理">
@@ -169,7 +169,7 @@
 
 <p>1、在生命周期的initState方法中将data，prop，method，computed，watch中的数据劫持， 通过observe方法与Object.defineProperty方法将相关对象转为换Observer对象。</p>
 <p>2、然后在initRender方法中解析模板，通过Watcher对象，Dep对象与观察者模式将模板中的 指令与对象的数据建立依赖关系，使用全局对象Dep.target实现依赖收集。</p>
-<p>3、当数据变化时，setter被调用，触发Object.defineProperty方法中的dep.notify方法， 遍历该数据依赖列表，执行器update方法通知Watcher进行视图更新。</p>
+<p>3、当数据变化时，setter被调用，触发Object.defineProperty方法中的dep.notify方法， 遍历该数据依赖列表，执行其update方法通知Watcher进行视图更新。</p>
 <p>vue是无法检测到对象属性的添加和删除，但是可以使用全局Vue.set方法（或vm.$set实例方法）。</p>
 <p>vue无法检测利用索引设置数组，但是可以使用全局Vue.set方法（或vm.$set实例方法）。</p>
 <p>无法检测直接修改数组长度，但是可以使用splice</p>
@@ -406,10 +406,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">实用技巧</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
@@ -423,6 +419,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">实用技巧</a>
               </li>
             
             <div class="clearfix"></div>
